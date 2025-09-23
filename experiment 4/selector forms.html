@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CSS Selector Types Example</title>
+    <style>
+        /* -------- i. Simple Selectors -------- */
+
+        /* Element selector - styles all <p> */
+        p {
+            color: darkgreen;
+        }
+
+        /* ID selector - styles element with id="unique" */
+        #unique {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Class selector - styles elements with class="highlight" */
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+
+        /* Group selector - styles <h1> and <h2> */
+        h1, h2 {
+            font-family: Arial, sans-serif;
+            color: navy;
+        }
+
+        /* Universal selector - styles all elements */
+        * {
+            box-sizing: border-box;
+            font-family: Verdana, sans-serif;
+        }
+
+        /* -------- ii. Combinator Selectors -------- */
+
+        /* Descendant selector - styles <span> inside <div> anywhere */
+        div span {
+            color: blue;
+        }
+
+        /* Child selector - styles <li> directly inside <ul> */
+        ul > li {
+            list-style-type: square;
+            margin: 5px 0;
+        }
+
+        /* Adjacent sibling selector - styles <p> immediately after <h2> */
+        h2 + p {
+            color: darkred;
+            font-style: italic;
+        }
+
+        /* General sibling selector - styles all <p> siblings after <h2> */
+        h2 ~ p {
+            border-left: 3px solid lightgray;
+            padding-left: 5px;
+        }
+
+        /* -------- iii. Pseudo-class Selector -------- */
+
+        /* Hover state on links */
+        a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        /* First child of its parent */
+        p:first-child {
+            color: purple;
+        }
+
+        /* -------- iv. Pseudo-element Selector -------- */
+
+        /* Before pseudo-element to add content before paragraphs */
+        p::before {
+            content: "👉 ";
+            color: red;
+        }
+
+        /* After pseudo-element to add a decorative line */
+        h1::after {
+            content: " ✨";
+            font-size: 1.2em;
+        }
+
+        /* -------- v. Attribute Selector -------- */
+
+        /* Select input elements with type="text" */
+        input[type="text"] {
+            border: 2px solid green;
+            padding: 5px;
+        }
+
+        /* Select links with target="_blank" */
+        a[target="_blank"] {
+            color: teal;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Selector Types Demo</h1>
+    <h2>Simple Selectors</h2>
+
+    <p id="unique">This paragraph uses an ID selector (#unique).</p>
+    <p class="highlight">This paragraph uses a class selector (.highlight).</p>
+    <p>This paragraph uses element selector (p).</p>
+
+    <h2>Combinator Selectors</h2>
+
+    <div>
+        <span>This span is styled using descendant selector (div span).</span>
+    </div>
+
+    <ul>
+        <li>Child selector styles me (ul > li)</li>
+        <li>Child selector styles me too</li>
+    </ul>
+
+    <h2>Adjacent and General Sibling Selectors</h2>
+
+    <h2>Heading</h2>
+    <p>This paragraph is styled by adjacent sibling selector (h2 + p)</p>
+    <p>This paragraph is styled by general sibling selector (h2 ~ p)</p>
+    <p>Me too, because I come after the h2!</p>
+
+    <h2>Pseudo-class Selectors</h2>
+    <a href="#" target="_self">Normal link</a> <br/>
+    <a href="#" target="_blank">Link opening in new tab (target="_blank")</a><br/>
+
+    <p>First paragraph, styled with :first-child pseudo-class.</p>
+    <p>Second paragraph, normal styling.</p>
+
+    <h2>Pseudo-element Selectors</h2>
+    <p>This paragraph has a red pointer added before text (::before).</p>
+    <h1>Heading with sparkle (::after)</h1>
+
+    <h2>Attribute Selectors</h2>
+    <form>
+        <input type="text" placeholder="Text input styled by attribute selector" />
+        <input type="password" placeholder="Password input" />
+    </form>
+
+</body>
+</html>
