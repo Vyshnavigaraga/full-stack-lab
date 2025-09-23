@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Styling Example</title>
+
+    <!-- Internal Style -->
+    <style>
+        h1 {
+            color: darkblue;
+            font-family: Arial, sans-serif;
+        }
+
+        .internal-style {
+            background-color: lightyellow;
+            padding: 10px;
+        }
+
+        #highlight {
+            color: red;
+        }
+    </style>
+
+    <!-- External Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Inline Style -->
+    <p style="color: green; font-weight: bold;">This is an inline styled paragraph.</p>
+
+    <!-- Internal Styled Element -->
+    <div class="internal-style">
+        <h1>This is styled using internal CSS</h1>
+        <p id="highlight">This paragraph is using ID selector with internal style.</p>
+    </div>
+
+    <!-- External Styled Element -->
+    <div class="external-style">
+        <p>This paragraph is styled using external CSS.</p>
+    </div>
+
+</body>
+</html>
