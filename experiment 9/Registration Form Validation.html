@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Form Validation</title>
+<style>
+  body { font-family: Arial; text-align: center; margin-top: 50px; }
+  input { padding: 8px; margin: 5px; width: 250px; }
+  .error { color: red; font-size: 14px; }
+</style>
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value.trim();
+  let mobile = document.getElementById("mobile").value.trim();
+  let email = document.getElementById("email").value.trim();
+
+  // Patterns
+  let namePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/; // start with letter, 6+ chars
+  let mobilePattern = /^[0-9]{10}$/; // exactly 10 digits
+  let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/; // simple email pattern
+
+  let valid = true;
+  document.getElementById("nameErr").innerHTML = "";
+  document.getElementById("mobileErr").innerHTML = "";
+  document.getElementById("emailErr").innerHTML = "";
+
+  if (!namePattern.test(name)) {
+    document.getElementById("nameErr").innerHTML = "❌ Name must start with a letter and be at least 6 characters.";
+    valid = false;
+  }
+  if (!mobilePattern.test(mobile)) {
+    document.getElementById("mobileErr").innerHTML = "❌ Mobile number must be 10 digits.";
+    valid = false;
+  }
+  if (!emailPattern.test(email)) {
+    document.getElementById("emailErr").innerHTML = "❌ Enter a valid email address.";
+    valid = false;
+  }
+
+  if (valid) {
+    alert("✅ Registration Successful!");
+  }
+}
+</script>
+</head>
+<body>
+  <h2>Registration Form Validation</h2>
+  <form onsubmit="event.preventDefault(); validateForm();">
+    <input type="text" id="name" placeholder="Enter Name"><br>
+    <span id="nameErr" class="error"></span><br>
+
+    <input type="text" id="mobile" placeholder="Enter Mobile Number"><br>
+    <span id="mobileErr" class="error"></span><br>
+
+    <input type="text" id="email" placeholder="Enter Email ID"><br>
+    <span id="emailErr" class="error"></span><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

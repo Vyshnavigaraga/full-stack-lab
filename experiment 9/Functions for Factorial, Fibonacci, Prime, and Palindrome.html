@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Functions for Math Operations</title>
+<script>
+// Function for Factorial
+function factorial(n) {
+  let fact = 1;
+  for (let i = 1; i <= n; i++) fact *= i;
+  return fact;
+}
+
+// Function for Fibonacci series
+function fibonacci(n) {
+  let series = [0, 1];
+  for (let i = 2; i < n; i++) {
+    series[i] = series[i - 1] + series[i - 2];
+  }
+  return series.slice(0, n).join(", ");
+}
+
+// Function for Prime numbers up to n
+function primeNumbers(n) {
+  let primes = [];
+  for (let i = 2; i <= n; i++) {
+    let isPrime = true;
+    for (let j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+    if (isPrime) primes.push(i);
+  }
+  return primes.join(", ");
+}
+
+// Function to check palindrome
+function isPalindrome(num) {
+  let str = num.toString();
+  let reversed = str.split("").reverse().join("");
+  return str === reversed ? "Palindrome" : "Not Palindrome";
+}
+
+// Example run
+function displayResults() {
+  let num = parseInt(prompt("Enter a number:"));
+  let output = `
+    <p><strong>Factorial:</strong> ${factorial(num)}</p>
+    <p><strong>Fibonacci:</strong> ${fibonacci(num)}</p>
+    <p><strong>Prime Numbers up to ${num}:</strong> ${primeNumbers(num)}</p>
+    <p><strong>Palindrome Check:</strong> ${isPalindrome(num)}</p>
+  `;
+  document.getElementById("result").innerHTML = output;
+}
+</script>
+</head>
+<body>
+  <h2>JavaScript Functions Example</h2>
+  <button onclick="displayResults()">Run All Functions</button>
+  <div id="result"></div>
+</body>
+</html>

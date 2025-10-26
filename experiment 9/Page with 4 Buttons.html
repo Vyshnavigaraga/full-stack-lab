@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Functions and Events Example</title>
+<style>
+  body { font-family: Arial; text-align: center; margin-top: 40px; }
+  input { padding: 6px; width: 150px; }
+  button { margin: 5px; padding: 8px 16px; }
+  #output { margin-top: 20px; font-weight: bold; }
+</style>
+<script>
+// Functions
+function factorial(n) {
+  let fact = 1;
+  for (let i = 1; i <= n; i++) fact *= i;
+  return fact;
+}
+
+function fibonacci(n) {
+  let series = [0, 1];
+  for (let i = 2; i < n; i++) series[i] = series[i - 1] + series[i - 2];
+  return series.slice(0, n).join(", ");
+}
+
+function primeNumbers(n) {
+  let primes = [];
+  for (let i = 2; i <= n; i++) {
+    let isPrime = true;
+    for (let j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) { isPrime = false; break; }
+    }
+    if (isPrime) primes.push(i);
+  }
+  return primes.join(", ");
+}
+
+function isPalindrome(num) {
+  let str = num.toString();
+  let rev = str.split("").reverse().join("");
+  return (str === rev) ? "Palindrome" : "Not Palindrome";
+}
+
+// Event functions
+function showFactorial() {
+  let n = parseInt(document.getElementById("num").value);
+  document.getElementById("output").innerHTML = "Factorial: " + factorial(n);
+}
+
+function showFibonacci() {
+  let n = parseInt(document.getElementById("num").value);
+  document.getElementById("output").innerHTML = "Fibonacci: " + fibonacci(n);
+}
+
+function showPrime() {
+  let n = parseInt(document.getElementById("num").value);
+  document.getElementById("output").innerHTML = "Prime Numbers: " + primeNumbers(n);
+}
+
+function showPalindrome() {
+  let n = document.getElementById("num").value;
+  document.getElementById("output").innerHTML = isPalindrome(n);
+}
+</script>
+</head>
+<body>
+  <h2>Math Functions with Events</h2>
+  <input type="number" id="num" placeholder="Enter number"><br><br>
+  <button onclick="showFactorial()">Factorial</button>
+  <button onclick="showFibonacci()">Fibonacci</button>
+  <button onclick="showPrime()">Prime</button>
+  <button onclick="showPalindrome()">Palindrome</button>
+  <div id="output"></div>
+</body>
+</html>
