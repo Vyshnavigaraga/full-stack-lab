@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Various Ways to Reference a Color</title>
+<style>
+  body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .color-box {
+    width: 200px;
+    height: 100px;
+    margin: 10px auto;
+    color: white;
+    line-height: 100px;
+    border-radius: 8px;
+  }
+
+  /* Different color formats */
+  .named { background-color: tomato; }               /* Named color */
+  .hex { background-color: #3498db; }                /* Hexadecimal */
+  .rgb { background-color: rgb(255, 165, 0); }       /* RGB */
+  .rgba { background-color: rgba(0, 128, 0, 0.7); }  /* RGBA */
+  .hsl { background-color: hsl(300, 70%, 50%); }     /* HSL */
+  .hsla { background-color: hsla(200, 80%, 50%, 0.6);}/* HSLA */
+</style>
+</head>
+<body>
+  <h2>Various Ways to Reference a Color</h2>
+  <div class="color-box named">Named Color</div>
+  <div class="color-box hex">HEX Color</div>
+  <div class="color-box rgb">RGB Color</div>
+  <div class="color-box rgba">RGBA Color</div>
+  <div class="color-box hsl">HSL Color</div>
+  <div class="color-box hsla">HSLA Color</div>
+</body>
+</html>
