@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Output Methods</title>
+<script>
+  // 1. Writing to the HTML document
+  document.write("<h3>1. Output using document.write()</h3>");
+
+  // 2. Writing to console
+  console.log("2. Output using console.log()");
+
+  // 3. Using an alert box
+  alert("3. Output using alert()");
+
+  // 4. Writing into an HTML element
+  function showOutput() {
+    document.getElementById("result").innerHTML = "4. Output using innerHTML property!";
+  }
+</script>
+</head>
+<body>
+  <h2>JavaScript Output Demonstration</h2>
+  <p id="result">Click the button below:</p>
+  <button onclick="showOutput()">Show Output in HTML Element</button>
+</body>
+</html>
