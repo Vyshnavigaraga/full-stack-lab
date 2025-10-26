@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Math Object Example</title>
+<script>
+function mathDemo() {
+  let num = 7.65;
+  let result = `
+    <p>Number: ${num}</p>
+    <p>Math.round(): ${Math.round(num)}</p>
+    <p>Math.floor(): ${Math.floor(num)}</p>
+    <p>Math.ceil(): ${Math.ceil(num)}</p>
+    <p>Math.random(): ${Math.random()}</p>
+    <p>Math.sqrt(25): ${Math.sqrt(25)}</p>
+    <p>Math.PI: ${Math.PI}</p>
+  `;
+  document.getElementById("mathResult").innerHTML = result;
+}
+</script>
+</head>
+<body>
+  <h2>Math Object Example</h2>
+  <button onclick="mathDemo()">Show Math Functions</button>
+  <div id="mathResult"></div>
+</body>
+</html>

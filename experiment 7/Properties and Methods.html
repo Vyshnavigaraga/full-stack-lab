@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document Object Example</title>
+<script>
+function showDocumentDetails() {
+  document.getElementById("info").innerHTML = `
+    <p><strong>Title:</strong> ${document.title}</p>
+    <p><strong>URL:</strong> ${document.URL}</p>
+    <p><strong>Last Modified:</strong> ${document.lastModified}</p>
+  `;
+  document.bgColor = "lightyellow"; // method to change background color
+}
+</script>
+</head>
+<body>
+  <h2>Document Object Properties & Methods</h2>
+  <button onclick="showDocumentDetails()">Show Document Info</button>
+  <div id="info"></div>
+</body>
+</html>

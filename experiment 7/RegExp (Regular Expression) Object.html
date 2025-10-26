@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RegExp Object Example</title>
+<script>
+function regexDemo() {
+  let text = "I love JavaScript and JavaScript loves me!";
+  let pattern = /JavaScript/g; // global match
+  let result = text.match(pattern);
+  
+  document.getElementById("regexResult").innerHTML = `
+    <p>Text: ${text}</p>
+    <p>Pattern: /JavaScript/g</p>
+    <p>Matches found: ${result.length}</p>
+  `;
+}
+</script>
+</head>
+<body>
+  <h2>Regular Expression (RegExp) Example</h2>
+  <button onclick="regexDemo()">Run RegExp</button>
+  <div id="regexResult"></div>
+</body>
+</html>

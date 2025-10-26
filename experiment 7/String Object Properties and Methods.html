@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>String Object Example</title>
+<script>
+function stringDemo() {
+  let text = "JavaScript is Awesome!";
+  let result = `
+    <p>Original String: ${text}</p>
+    <p>Length: ${text.length}</p>
+    <p>Uppercase: ${text.toUpperCase()}</p>
+    <p>Lowercase: ${text.toLowerCase()}</p>
+    <p>Substring (0,10): ${text.substring(0,10)}</p>
+    <p>Replace "Awesome" with "Fun": ${text.replace("Awesome","Fun")}</p>
+  `;
+  document.getElementById("stringResult").innerHTML = result;
+}
+</script>
+</head>
+<body>
+  <h2>String Object Example</h2>
+  <button onclick="stringDemo()">Show String Methods</button>
+  <div id="stringResult"></div>
+</body>
+</html>

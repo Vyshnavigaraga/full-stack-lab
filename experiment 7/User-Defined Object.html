@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User-Defined Object Example</title>
+<script>
+function Person(name, age) {        // Constructor
+  this.name = name;
+  this.age = age;
+
+  // Method
+  this.display = function() {
+    return `Name: ${this.name}, Age: ${this.age}`;
+  };
+
+  // Accessors (getter and setter)
+  Object.defineProperty(this, "info", {
+    get: function() {
+      return `${this.name} is ${this.age} years old.`;
+    },
+    set: function(value) {
+      let parts = value.split(" ");
+      this.name = parts[0];
+      this.age = Number(parts[1]);
+    }
+  });
+}
+
+function showUserObject() {
+  let person1 = new Person("Alice", 25);
+
+  let output = `
+    <p>${person1.display()}</p>
+    <p>Getter: ${person1.info}</p>
+  `;
+
+  person1.info = "Bob 30"; // Using setter
+  output += `<p>After using setter: ${person1.display()}</p>`;
+
+  document.getElementById("userObject").innerHTML = output;
+}
+</script>
+</head>
+<body>
+  <h2>User-Defined Object Example</h2>
+  <button onclick="showUserObject()">Show Person Object</button>
+  <div id="userObject"></div>
+</body>
+</html>

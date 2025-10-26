@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Date Object Example</title>
+<script>
+function showDateInfo() {
+  let now = new Date();
+
+  document.getElementById("dateResult").innerHTML = `
+    <p>Current Date: ${now}</p>
+    <p>Year: ${now.getFullYear()}</p>
+    <p>Month: ${now.getMonth() + 1}</p>
+    <p>Day: ${now.getDate()}</p>
+    <p>Hours: ${now.getHours()}</p>
+    <p>Minutes: ${now.getMinutes()}</p>
+    <p>Seconds: ${now.getSeconds()}</p>
+  `;
+}
+</script>
+</head>
+<body>
+  <h2>Date Object Example</h2>
+  <button onclick="showDateInfo()">Show Current Date Info</button>
+  <div id="dateResult"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Array Object Example</title>
+<script>
+function arrayDemo() {
+  let fruits = ["Apple", "Banana", "Cherry"];
+  
+  let output = `
+    <p>Original Array: ${fruits.join(", ")}</p>
+    <p>Length: ${fruits.length}</p>
+  `;
+
+  fruits.push("Mango");
+  fruits.sort();
+
+  output += `<p>After push() and sort(): ${fruits.join(", ")}</p>`;
+
+  document.getElementById("result").innerHTML = output;
+}
+</script>
+</head>
+<body>
+  <h2>Array Object Properties & Methods</h2>
+  <button onclick="arrayDemo()">Show Array Operations</button>
+  <div id="result"></div>
+</body>
+</html>
