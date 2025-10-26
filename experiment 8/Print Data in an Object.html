@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Looping Through Object</title>
+<script>
+function loopThroughObject() {
+  const student = { name: "John", age: 21, course: "BCA" };
+  const fruits = ["Apple", "Banana", "Cherry"];
+
+  let output = "<h3>Using for-in (object):</h3>";
+  for (let key in student) {
+    output += key + ": " + student[key] + "<br>";
+  }
+
+  output += "<h3>Using forEach (array):</h3>";
+  fruits.forEach((fruit) => {
+    output += fruit + "<br>";
+  });
+
+  output += "<h3>Using for-of (array):</h3>";
+  for (let f of fruits) {
+    output += f + "<br>";
+  }
+
+  document.getElementById("loopResult").innerHTML = output;
+}
+</script>
+</head>
+<body>
+  <h2>Looping Using for-in, forEach & for-of</h2>
+  <button onclick="loopThroughObject()">Show Loops</button>
+  <div id="loopResult"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Largest Number Finder</title>
+<script>
+function findLargest() {
+  let a = parseInt(prompt("Enter first integer:"));
+  let b = parseInt(prompt("Enter second integer:"));
+  let c = parseInt(prompt("Enter third integer:"));
+
+  if (a === b && b === c) {
+    alert("EQUAL NUMBERS");
+  } else {
+    let largest = a;
+    if (b > largest) largest = b;
+    if (c > largest) largest = c;
+    alert(largest + " is the LARGER NUMBER");
+  }
+}
+</script>
+</head>
+<body>
+  <h2>Largest of Three Numbers</h2>
+  <button onclick="findLargest()">Check Largest Number</button>
+</body>
+</html>
